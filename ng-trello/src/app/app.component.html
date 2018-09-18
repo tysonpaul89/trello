@@ -1,0 +1,26 @@
+<div class="container">
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">Home Page</h1>
+            <p class="lead text-muted">Something short and leading about the collection below—its contents, the
+                creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
+
+            <div class="btn-group" dropdown>
+                <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
+                    aria-controls="dropdown-basic">
+                    Preview Modules<span class="caret"></span>
+                </button>
+                <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
+                    <h6 class="dropdown-header">Auth</h6>
+                    <li role="menuitem"><a class="dropdown-item" routerLink="/auth/login">Login</a></li>
+                    <li role="menuitem"><a class="dropdown-item" routerLink="/auth/signup">Signup</a></li>
+                    <li class="divider dropdown-divider"></li>
+                    <h6 class="dropdown-header">Dashboard</h6>
+                    <li role="menuitem"><a class="dropdown-item" routerLink="">Dashboard</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <router-outlet></router-outlet>
+</div>
