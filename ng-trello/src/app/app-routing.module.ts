@@ -7,8 +7,12 @@ const routes: Routes = [
     loadChildren: './modules/auth/auth.module#AuthModule'
   },
   {
-    path: 'boards',
-    loadChildren: './modules/boards/boards.module#BoardsModule'
+    path: 'board',
+    loadChildren: './modules/board/board.module#BoardModule'
+  },
+  {
+    path: 'card',
+    loadChildren: './modules/card/card.module#CardModule'
   },
   {
     path: '',
