@@ -1,17 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { BoardListComponent } from './board-list/board-list.component';
-
+import { DragComponent } from './drag/drag.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: BoardListComponent
-  }
+    {
+        path: '',
+        component: DragComponent
+    }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class BoardsRoutingModule { }
+export class TestRoutingModule { }

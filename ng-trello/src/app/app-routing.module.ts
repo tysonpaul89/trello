@@ -11,8 +11,8 @@ const routes: Routes = [
     loadChildren: './modules/board/board.module#BoardModule'
   },
   {
-    path: 'card',
-    loadChildren: './modules/card/card.module#CardModule'
+    path: 'test',
+    loadChildren: './modules/test/test.module#TestModule'
   },
   {
     path: '',
