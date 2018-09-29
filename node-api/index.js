@@ -4,12 +4,11 @@ const express = require('express')
 const cors = require('cors')
 // Package to parse HTTP body
 const bodyParser = require('body-parser')
-// Form validation Package
-const validate = require('validate.js')
 // Database Package
 const Datastore = require('nedb')
 // Authentication Packages
 const passport = require('passport')
+const Response = require('./models/response')
 // ======================= Configuration ======================================
 const app = express()
 const port = 5000
@@ -27,11 +26,27 @@ app.locals.db = new Datastore({ filename: './data.db', autoload: true })
 
 // Adding Passport
 app.use(passport.initialize())
-require('./config/passport')(passport, app.locals.db)
+require('./lib/passport')(passport, app.locals.db)
 
 // Routing
 const authRoute = require('./routes/auth')
 app.use('/auth/', authRoute)
+
+// 404 Error Handler
+app.use((req, res, next) => {
+  const response = new Response(res)
+  response.status = 404
+  response.message = 'Page Not Found'
+  response.send()
+})
+
+// 500 Error Handler
+app.use((err, req, res, next) => {
+  const response = new Response(res)
+  response.status = 500
+  response.error = err.stack
+  response.send()
+})
 
 app.listen(port, () => {
   console.log(`Listening at http://localhost:${port}/`)

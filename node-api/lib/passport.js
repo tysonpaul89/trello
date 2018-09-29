@@ -3,7 +3,7 @@ const ExtractJwt = require('passport-jwt').ExtractJwt
 // const bycrypt = require('bcryptjs')
 const opts = {}
 opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken()
-opts.secretOrKey = require('./config').passportSecret
+opts.secretOrKey = require('../config/config').passportSecret
 
 module.exports = (passport, db) => {
   // bycrypt.genSalt(10, (err, salt) => {
@@ -29,12 +29,13 @@ module.exports = (passport, db) => {
     new JwStrategy(opts, (payload, done) => {
       db.findOne({ _id: payload.id }, (err, user) => {
         if (err) {
-          console.log(err)
+          return done(err)
         }
         if (user) {
-          done(null, user)
+          return done(null, user)
+        } else {
+          return done(null, false)
         }
-        done(null, false)
       })
     })
   )
