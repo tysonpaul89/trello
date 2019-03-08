@@ -1,11 +1,6 @@
 .card-columns {
     column-count: 1;
 }
-.icon-link {
-    position: absolute;
-    margin-top: -40px;
-    margin-left: 240px;
-}
 
 .icon-flip {
     transform: scaleX(-1);

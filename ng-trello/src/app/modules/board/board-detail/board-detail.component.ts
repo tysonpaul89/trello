@@ -12,20 +12,4 @@ export class BoardDetailComponent implements OnInit {
   ngOnInit() {
   }
 
-  allowDrop(ev) {
-    ev.preventDefault();
-  }
-
-  drag(ev) {
-    console.log('dragged');
-  }
-
-  drop(ev) {
-    console.log('dropped');
-  }
-
-  onCardClick(ev) {
-    console.log('clicked');
-  }
-
 }

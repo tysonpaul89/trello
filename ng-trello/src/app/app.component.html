@@ -1,29 +1,28 @@
 <div class="container-fluid">
-    <section class="jumbotron text-center">
+    <!-- <section class="jumbotron text-center">
         <div class="container">
             <h1 class="jumbotron-heading">Home Page</h1>
             <p class="lead text-muted">Something short and leading about the collection below—its contents, the
                 creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
-
-            <div class="btn-group" dropdown>
-                <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
-                    aria-controls="dropdown-basic">
-                    Preview Modules<span class="caret"></span>
-                </button>
-                <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
+            <div class="row">
+              <div class="col">
+                <div ngbDropdown class="d-inline-block">
+                  <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Preview Module Designs</button>
+                  <div ngbDropdownMenu class="module-preview-dropdown" aria-labelledby="dropdownBasic1">
                     <h6 class="dropdown-header">Auth</h6>
-                    <li role="menuitem"><a class="dropdown-item" routerLink="/auth/login">Login</a></li>
-                    <li role="menuitem"><a class="dropdown-item" routerLink="/auth/signup">Signup</a></li>
-                    <li class="divider dropdown-divider"></li>
+                    <button ngbDropdownItem routerLink="/auth/login">Login</button>
+                    <button ngbDropdownItem routerLink="/auth/signup">Signup</button>
+                    <div class="dropdown-divider"></div>
+
                     <h6 class="dropdown-header">Boards</h6>
-                    <li role="menuitem"><a class="dropdown-item" routerLink="/board">Board</a></li>
-                    <li role="menuitem"><a class="dropdown-item" routerLink="/board/asdf123">Board-Detail</a></li>
-                    <h6 class="dropdown-header">Card</h6>
-                    <li role="menuitem"><a class="dropdown-item" routerLink="/card">Card</a></li>
-                </ul>
+                    <button ngbDropdownItem routerLink="/board">Board</button>
+                    <button ngbDropdownItem routerLink="/board/asdf123">Board-Detail</button>
+                  </div>
+                </div>
+              </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <router-outlet></router-outlet>
 </div>

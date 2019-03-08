@@ -1,3 +1,7 @@
 .new-card {
     min-height: 160px;
 }
+
+.board-link-card {
+  cursor: pointer;
+}
